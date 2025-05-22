@@ -145,7 +145,8 @@ body {
 
 }
 
-.promo-title > button{
+
+.promo-button{
     width: 209px;
     height: 43px;
     background: #ff9619;
@@ -157,6 +158,11 @@ body {
     color: #fff;
     border: none;
     cursor: pointer;
+    
+}
+
+.promo-button{
+    transition: .2s;
 }
 
 .container-1{
@@ -224,4 +230,120 @@ body {
 
 .slider-dot.active {
     background: #FF9619;
+}
+
+.promo-button:hover{
+    background: #5B5B5B;
+}
+
+.new{
+    margin-top: 314px;
+    margin-bottom: 195px;
+}
+
+.new-title{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 110%;
+
+    color: #343434;
+}
+
+.new-title > span{
+    color: #ff9619;
+}
+
+.new-slider-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.new-slide > h2{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 122%;
+    text-transform: uppercase;
+    color: #343434;
+    margin-top: 30px;
+}
+
+.new-slide > p{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ff9619;
+    margin-top: 15px;
+}
+
+.new-slider-container {
+    width: 100%;
+    position: relative;
+}
+
+.new-slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+    padding: 40px 0;
+}
+
+.new-slide {
+    flex: 0 0 33.333%;
+    padding: 0 15px;
+    transition: all 0.5s ease;
+    transform: scale(0.9);
+    opacity: 0.7;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.new-slide.active {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 2;
+}
+
+.new-slide img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #343434;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.slider-arrow-left {
+    left: 20px;
+}
+
+.slider-arrow-right {
+    right: 20px;
+}
+
+.new-button{
+    margin-top: 20px;
+
 }

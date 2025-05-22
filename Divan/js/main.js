@@ -108,3 +108,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Инициализация
     initSlider();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sliderTrack = document.querySelector('.new-slider-track');
+    const slides = document.querySelectorAll('.new-slide');
+    const prevBtn = document.querySelector('.slider-arrow-left');
+    const nextBtn = document.querySelector('.slider-arrow-right');
+    
+    // Клонируем слайды для бесконечной прокрутки
+    const firstClone = slides[0].cloneNode(true);
+    const secondClone = slides[1].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+    const preLastClone = slides[slides.length - 2].cloneNode(true);
+    
+    sliderTrack.appendChild(firstClone);
+    sliderTrack.appendChild(secondClone);
+    sliderTrack.insertBefore(lastClone, slides[0]);
+    sliderTrack.insertBefore(preLastClone, slides[0]);
+    
+    const allSlides = document.querySelectorAll('.new-slide');
+    let currentIndex = 2; // Начинаем с первого оригинального слайда
+    let isAnimating = false;
+    
+    // Обновляем позицию слайдера
+    function updateSlider() {
+        sliderTrack.style.transform = `translateX(-${currentIndex * 33.333}%)`;
+        
+        // Обновляем активные слайды
+        allSlides.forEach(slide => slide.classList.remove('active'));
+        allSlides[currentIndex + 1].classList.add('active');
+    }
+    
+    // Переход к следующему слайду
+    function goNext() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        currentIndex++;
+        sliderTrack.style.transition = 'transform 0.5s ease';
+        updateSlider();
+        
+    }
+    
+    // Переход к предыдущему слайду
+    function goPrev() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        currentIndex--;
+        sliderTrack.style.transition = 'transform 0.5s ease';
+        updateSlider();
+        
+    
+    }
+    
+    // Обработчики для кнопок
+    nextBtn.addEventListener('click', goNext);
+    prevBtn.addEventListener('click', goPrev);
+    
+
+    
+    // Инициализация
+    updateSlider();
+    
+    // Обработка окончания анимации
+    sliderTrack.addEventListener('transitionend', () => {
+        isAnimating = false;
+    });
+
+    
+    
+    // Адаптация к изменению размера окна
+    window.addEventListener('resize', () => {
+        sliderTrack.style.transition = 'none';
+        updateSlider();
+        setTimeout(() => {
+            sliderTrack.style.transition = 'transform 0.5s ease';
+        }, 50);
+    });
+});
