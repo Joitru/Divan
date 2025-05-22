@@ -1,0 +1,227 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.container{
+    max-width: 85%;
+    margin: auto;
+}
+
+.nav{
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #343434;
+    text-decoration: none;
+    margin-right:  62px;
+    margin-left: 62px;
+    
+}
+
+
+
+.namber{
+    margin-right:  62px;
+    margin-left: 62px; 
+    justify-content: center;
+}
+
+.Language {
+    margin-right: 62px;
+    margin-left: 62px;
+    border: none;
+    background: transparent;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #343434;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    padding-right: 15px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 15px;
+}
+
+.Language:hover {
+    color: #FF9619;
+}
+
+.Language option {
+    background: #fff;
+    color: #343434;
+}
+
+.header-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.catalog {
+    position: absolute;
+    left: 246px;
+    top: 70px; /* Изменил bottom на top для более предсказуемого позиционирования */
+    width: 208px;
+    height: 312px;
+    box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+}
+
+.catalog.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.catalog-link {
+    cursor: pointer;
+}
+
+.cat{
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 230%;
+    color: #343434;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: .3s;
+    
+
+}
+.cat:hover{
+    background: #FF9619;
+    color: #fff;
+}
+
+.header-content{
+    padding-bottom: 25px;
+}
+
+.promo{
+    background: #CCB2A3;
+    width: 100%;
+    height: 590px;
+}
+
+.promo-text{
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 110%;
+    text-transform: capitalize;
+    color: #fff;
+    margin-top: 174px;
+    margin-bottom: 60px;
+    margin-right: 300px;
+}
+
+.promo-text > span{
+    color: #ff9619;
+}
+
+.promo-content{
+    display: flex;
+    
+
+}
+
+.promo-title > button{
+    width: 209px;
+    height: 43px;
+    background: #ff9619;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.container-1{
+    max-width: 75%;
+    margin: auto;
+}
+
+.promo-slider > h3{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 127%;
+    color: #fff;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-align: right;
+}
+
+
+/* Исправленный слайдер */
+/* Полностью переработанный слайдер */
+.promo-slider {
+    position: relative;
+    width: 870px;
+    height: 717px;
+    overflow: hidden;
+    margin-left: auto;
+}
+
+.slider-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 870px; /* Фиксированная ширина */
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Убираем лишние отступы */
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slider-dot.active {
+    background: #FF9619;
+}
