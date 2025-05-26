@@ -347,3 +347,89 @@ body {
     margin-top: 20px;
 
 }
+.Latest{
+    margin-bottom: 160px;
+}
+
+.Latest-title{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 150%;
+    color: #343434;
+    margin-bottom: 80px;
+}
+
+.Latest-title > span{
+    color: #ff9619;
+}
+
+.slaid{
+    margin-left: 3px;
+}
+
+.slaid > p{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 122%;
+    text-transform: uppercase;
+    color: #343434;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 15px;
+}
+
+/* Latest Slider Styles */
+.Latest-slaider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 40px; /* Для стрелок */
+}
+
+.Latest-slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.Latest-slide {
+    flex: 0 0 25%; /* 4 слайда в ряд */
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.Latest-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.Latest-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Latest-slider-arrow-left {
+    left: 0;
+}
+
+.Latest-slider-arrow-right {
+    right: 0;
+}
+
+.Latest-slider-arrow img {
+    width: 20px;
+    height: 20px;
+}

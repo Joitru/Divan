@@ -187,3 +187,54 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 50);
     });
 });
+
+// Latest Slider
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.Latest-slaider');
+    const container = document.querySelector('.Latest-slider-container');
+    const slides = document.querySelectorAll('.Latest-slide');
+    const prevBtn = document.querySelector('.Latest-slider-arrow-left');
+    const nextBtn = document.querySelector('.Latest-slider-arrow-right');
+    
+    let currentPosition = 0;
+    const slideWidth = slides[0].offsetWidth;
+    const visibleSlides = 4;
+    const totalSlides = slides.length;
+    
+    // Проверяем, нужно ли показывать стрелки
+    function checkArrows() {
+        prevBtn.style.display = currentPosition === 0 ? 'none' : 'flex';
+        nextBtn.style.display = currentPosition <= -(totalSlides - visibleSlides) * slideWidth ? 'none' : 'flex';
+    }
+    
+    // Перемещение слайдера
+    function moveSlider() {
+        container.style.transform = `translateX(${currentPosition}px)`;
+        checkArrows();
+    }
+    
+    // Следующие слайды
+    nextBtn.addEventListener('click', function() {
+        if (currentPosition > -(totalSlides - visibleSlides) * slideWidth) {
+            currentPosition -= slideWidth;
+            moveSlider();
+        }
+    });
+    
+    // Предыдущие слайды
+    prevBtn.addEventListener('click', function() {
+        if (currentPosition < 0) {
+            currentPosition += slideWidth;
+            moveSlider();
+        }
+    });
+    
+    // Инициализация
+    checkArrows();
+    
+    // Адаптация к изменению размера окна
+    window.addEventListener('resize', function() {
+        currentPosition = 0;
+        moveSlider();
+    });
+});
